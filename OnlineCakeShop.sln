@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCakeShop", "OnlineCakeShop\OnlineCakeShop.csproj", "{1C716841-93C6-49A3-8293-E419197F1568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCakeShop", "OnlineCakeShop\OnlineCakeShop.csproj", "{1C716841-93C6-49A3-8293-E419197F1568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBLayer", "DBLayer", "{36D6D3D7-4F6D-4C35-9B05-7A289426E919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCakeShop.Entity", "OnlineCakeShop.Entity\OnlineCakeShop.Entity.csproj", "{2811AC04-B715-4CD5-BAA2-320D01830E8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCakeShop.DataAccessLayer", "OnlineCakeShop.DataAccessLayer\OnlineCakeShop.DataAccessLayer.csproj", "{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,21 @@ Global
 		{1C716841-93C6-49A3-8293-E419197F1568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C716841-93C6-49A3-8293-E419197F1568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C716841-93C6-49A3-8293-E419197F1568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2811AC04-B715-4CD5-BAA2-320D01830E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2811AC04-B715-4CD5-BAA2-320D01830E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2811AC04-B715-4CD5-BAA2-320D01830E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2811AC04-B715-4CD5-BAA2-320D01830E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2811AC04-B715-4CD5-BAA2-320D01830E8A} = {36D6D3D7-4F6D-4C35-9B05-7A289426E919}
+		{A0AF658E-09EF-45BC-B4EB-7C8FC5EE3978} = {36D6D3D7-4F6D-4C35-9B05-7A289426E919}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F9AE5DD-08B4-4B73-B8AD-03A0DE49FFB0}
