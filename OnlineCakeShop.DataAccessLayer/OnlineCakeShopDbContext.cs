@@ -16,7 +16,7 @@ namespace OnlineCakeShop.DataAccessLayer
 	
 			protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 			{
-				optionsBuilder.UseSqlServer("Server=localhost\\MSSQLSERVER01;Database=OnlineCakeShop;Trusted_Connection=True;");
+				optionsBuilder.UseSqlServer("Data Source=DESKTOP-F9EM8FO\\MSSQLSERVER01;Initial Catalog=OnlineCakeShop;Integrated Security=True;Trust Server Certificate=True");
 			}
 		
 	}
