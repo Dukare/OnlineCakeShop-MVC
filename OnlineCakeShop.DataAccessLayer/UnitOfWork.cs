@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineCakeShop.DataAccessLayer
 {
-	public class UnitOfWork : IUnitOfWork
+	public class UnitOfWork : IDisposable
 	{
 		private readonly OnlineCakeShopDbContext _context;
 	
@@ -20,6 +20,8 @@ namespace OnlineCakeShop.DataAccessLayer
 
 		public IRepository<User> Users { get; }
 		public IRepository<Role> Roles { get; }
+
+	
 
 		public void Save()
 		{
