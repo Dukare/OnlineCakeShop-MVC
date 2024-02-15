@@ -14,10 +14,7 @@ namespace OnlineCakeShop.DataAccessLayer
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<User> Users { get; set; }
 	
-			protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-			{
-				optionsBuilder.UseSqlServer("Data Source=DESKTOP-F9EM8FO\\MSSQLSERVER01;Initial Catalog=OnlineCakeShop;Integrated Security=True;Trust Server Certificate=True");
-			}
+			
 		
 	}
 }

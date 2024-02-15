@@ -1,3 +1,5 @@
+using OnlineCakeShop.DataAccessLayer;
+
 namespace OnlineCakeShop
 {
     public class Program
@@ -8,6 +10,7 @@ namespace OnlineCakeShop
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<UnitOfWork>();
 
             var app = builder.Build();
 
