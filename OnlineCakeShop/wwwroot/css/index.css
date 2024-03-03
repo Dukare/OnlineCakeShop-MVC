@@ -13,6 +13,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
 .form-structor {
     background-color: #222;
     border-radius: 15px;
@@ -83,6 +84,7 @@ body {
 }
 
 }
+
 
 .form-holder {
     border-radius: 15px;
