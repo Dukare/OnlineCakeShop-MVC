@@ -13,8 +13,10 @@ namespace OnlineCakeShop.DataAccessLayer
 	{
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<User> Users { get; set; }
-	
-			
-		
-	}
+
+
+        public OnlineCakeShopDbContext(DbContextOptions<OnlineCakeShopDbContext> options) : base(options)
+        {
+        }
+    }
 }

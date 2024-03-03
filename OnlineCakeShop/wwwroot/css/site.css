@@ -32,7 +32,7 @@ body {
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 500px;
-    background-image: url("https://unsplash.com/photos/a-white-wedding-cake-with-greenery-on-top-DtINiuJqB_w&auto=format&fit=crop&w=1000&q=100");
+    background-image: url("/../img/cakeImage.png");
 }
 
 .signup {

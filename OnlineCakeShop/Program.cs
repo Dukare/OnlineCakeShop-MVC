@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using OnlineCakeShop.DataAccessLayer;
+using System.Configuration;
 
 namespace OnlineCakeShop
 {
@@ -10,6 +12,9 @@ namespace OnlineCakeShop
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<OnlineCakeShopDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
             builder.Services.AddScoped<UnitOfWork>();
 
             var app = builder.Build();
@@ -22,7 +27,7 @@ namespace OnlineCakeShop
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+           //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
