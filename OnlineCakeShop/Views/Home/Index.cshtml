@@ -1,20 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model SignUpModel
 
 
 <div class="form-structor">
+	<form method="post">
+
 
 	<div class="signup">
 		<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
 		<div class="form-holder">
-			<input type="text"  id="nameInput" class="input" placeholder="Name" />
-			<input type="email" id="emailInput" class="input" placeholder="Email" />
-			<input type="password" id="passinput" class="input" placeholder="Password" />
+			
+			<input asp-for="UserName" type="text" id="nameInput" class="input" placeholder="Name" />
+			<span asp-validation-for="UserName" class="text-danger"></span>
+		
+			<input  asp-for="Email" type="email" id="emailInput" class="input" placeholder="Email" />
+			<span asp-validation-for="Email" class="text-danger"></span>
+			
+			<input asp-for="Password" type="password" id="passinput" class="input" placeholder="Password" />
+			<span asp-validation-for="Password" class="text-danger"></span>
 		</div>
-		<button id="SignUpButton"  type="button" class="submit-btn">Sign up</button>
+		<button id="SignUpButton"  type="submit" class="submit-btn">Sign up</button>
 	</div>
+	</form>
 	<div class="login slide-up">
 		<div class="center">
 			<h2 class="form-title" id="login"><span>or</span>Log in</h2>

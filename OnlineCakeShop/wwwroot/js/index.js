@@ -34,24 +34,33 @@ signupBtn.addEventListener('click', (e) => {
 	});
 });
 
+//nameInput.addEventListener('change', (e) => {
+//	if (!(nameInput.value != null && nameInput.value.length >= 4)) {
+//		alert('Name should contain at least 4 characters');
+//		return;
+//	}
+//});
+
+//emailInput.addEventListener('change', (e) => {
+//	if (!(emailInput.value != null && emailInput.value != undefined && checkEmail(emailInput.value))) {
+//		alert('Email is not in correct format');
+//		return;
+//	}
+//});
+
+//passinput.addEventListener('change', (e) => {
+//	if (!(passinput.value != null && passinput.value != undefined && checkPass(passinput.value))) {
+//		alert('Password Should contain atleast 6 characters');
+//		return;
+//	}
+//});
 signUPBtn.addEventListener('click', (e) => {
 	debugger;
 
 
-	if (!(nameInput.value != null  && nameInput.value.length >= 4)) 
-	 {
-		alert('Name should contain at least 4 characters');
-		return;
-	}
-	if (! (emailInput.value != null && emailInput.value != undefined && checkEmail(emailInput.value)))
-	 {
-		alert('Email is not in correct format');
-		return;
-	}
-	if (!(passinput.value != null && passinput.value != undefined && checkPass(passinput.value))) {
-		alert('Password Should contain atleast 6 characters');
-		return;
-	}
+	
+	
+	
 	alert('All Clear!');
 });
 

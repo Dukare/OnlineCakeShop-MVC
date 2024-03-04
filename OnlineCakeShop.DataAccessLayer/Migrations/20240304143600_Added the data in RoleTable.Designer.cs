@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineCakeShop.DataAccessLayer;
 
@@ -11,9 +12,11 @@ using OnlineCakeShop.DataAccessLayer;
 namespace OnlineCakeShop.DataAccessLayer.Migrations
 {
     [DbContext(typeof(OnlineCakeShopDbContext))]
-    partial class OnlineCakeShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240304143600_Added the data in RoleTable")]
+    partial class AddedthedatainRoleTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
