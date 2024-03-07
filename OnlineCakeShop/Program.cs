@@ -19,7 +19,7 @@ namespace OnlineCakeShop
             builder.Services.AddDbContext<OnlineCakeShopDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
             builder.Services.AddScoped<IEmailSender,EmailSender>();
-            builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<OnlineCakeShopDbContext>();
+            builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<OnlineCakeShopDbContext>().AddDefaultTokenProviders();
 
             builder.Services.AddScoped<UnitOfWork>();
 

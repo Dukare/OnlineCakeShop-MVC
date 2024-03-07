@@ -101,6 +101,8 @@ namespace OnlineCakeShop.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            public string? Role { get; set; }
         }
 
 
@@ -132,7 +134,10 @@ namespace OnlineCakeShop.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    if (string.IsNullOrEmpty(Input.Role))
+                    { 
+                        await _userManager.AddToRoleAsync(user,DbConstants.Role_User_customer );
+                    }
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
