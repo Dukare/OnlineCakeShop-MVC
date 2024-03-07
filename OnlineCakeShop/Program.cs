@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using OnlineCakeShop.DataAccessLayer;
 using System.Configuration;
 using Microsoft.AspNetCore.Identity;
+using OnlineCakeShop.DataAccessLayer.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace OnlineCakeShop
 {
@@ -16,8 +18,8 @@ namespace OnlineCakeShop
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<OnlineCakeShopDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
-
-            builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<OnlineCakeShopDbContext>();
+            builder.Services.AddScoped<IEmailSender,EmailSender>();
+            builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<OnlineCakeShopDbContext>();
 
             builder.Services.AddScoped<UnitOfWork>();
 
