@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineCakeShop.DataAccessLayer;
 using System.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace OnlineCakeShop
 {
@@ -11,9 +12,12 @@ namespace OnlineCakeShop
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<OnlineCakeShopDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+            builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<OnlineCakeShopDbContext>();
 
             builder.Services.AddScoped<UnitOfWork>();
 
@@ -31,9 +35,9 @@ namespace OnlineCakeShop
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
+            app.MapRazorPages();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

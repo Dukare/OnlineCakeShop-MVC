@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnlineCakeShop.DataAccessLayer
 {
-	public class OnlineCakeShopDbContext:DbContext
+	public class OnlineCakeShopDbContext:IdentityDbContext
 	{
 
 		public OnlineCakeShopDbContext()
@@ -27,7 +28,7 @@ namespace OnlineCakeShop.DataAccessLayer
 		
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			
+			base.OnModelCreating(modelBuilder);	
 		}
 
 
