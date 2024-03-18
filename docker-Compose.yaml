@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web_api:
+    build: . # build the Docker image 
+    container_name: onlinecakeshop
+    ports:
+      - "8080:8080"
+  sql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql22
+    ports: 
+      - "1433:1433" 
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=PassWord!

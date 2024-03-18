@@ -5,12 +5,14 @@ using Microsoft.AspNetCore.Identity;
 using OnlineCakeShop.DataAccessLayer.Utility;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
+
 namespace OnlineCakeShop
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -24,7 +26,23 @@ namespace OnlineCakeShop
             builder.Services.AddScoped<UnitOfWork>();
 
             var app = builder.Build();
-
+            // Configure database migration
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var dbContext = services.GetRequiredService<OnlineCakeShopDbContext>();
+                    dbContext.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                     
+                    Console.WriteLine("An error occurred while migrating the database:");
+                    Console.WriteLine(ex.Message);
+                    // Handle the error accordingly
+                }
+            }
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {

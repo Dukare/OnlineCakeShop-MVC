@@ -20,11 +20,11 @@ namespace OnlineCakeShop.DataAccessLayer
 
 		}
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			//optionsBuilder.UseSqlServer("Server=localhost\\MSSQLSERVER01;Database=OnlineCakeShop;Trusted_Connection=True;");
-			optionsBuilder.UseSqlServer("Data Source=Shubham;Initial Catalog=OnlineCakeShop;Integrated Security=True;Trust Server Certificate=True");
-		}
+		// protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		// {
+		// 	//optionsBuilder.UseSqlServer("Server=localhost\\MSSQLSERVER01;Database=OnlineCakeShop;Trusted_Connection=True;");
+		// 	optionsBuilder.UseSqlServer("Server=localhost,1433;Database=OnlineCakeShop;User ID=sa;Password=PassWord!;TrustServerCertificate=True;");
+		// }
 		
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
