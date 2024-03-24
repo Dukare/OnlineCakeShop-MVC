@@ -1,38 +1,45 @@
-﻿<html>
+﻿<header class="lg:px-16 px-4 bg-pink-300 text-2xl flex items-center py-4 shadow-md">
+    <div class="flex-1 flex justify-between items-center">
+        <a href="#" class="text-xl">CakeShop</a>
+    </div>
 
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
-</head>
+    <label for="menu-toggle" class="pointer-cursor md:hidden block">
+        <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 20 20">
+            <title>menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+    </label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
 
-<body  class="font-dosis">
-    <header class="lg:px-16 px-4 bg-pink-400 flex items-center py-4 shadow-md">
-        <div class="flex-1 flex justify-between items-center">
-            <a href="#" class="text-xl">CakeShop</a>
-        </div>
+    <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+        <nav>
+             
+            <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                <form class="max-w-md mx-auto">
+                   
+                    <div class="relative">
+                       
+                        <input type="search" id="default-search"
+                            class="block w-full p-4 pr-19 text-sm text-black-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white-700 dark:white-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-white-500 dark:focus:border-white-500"
+                            placeholder="Red Velvet" required />
+                        <button type="submit"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-pink-300 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-bg-pink-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-pink-300 dark:hover:bg-pink-600 dark:focus:bg-pink-300">
+                             <svg class="w-4 h-4 text-white-500 dark:text-white-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            </button>
+                    </div>
+                </form>
+                <li><a class="md:p-4 py-3 px-0 block" href="#">Product</a></li>
+                <li><a class="md:p-4 py-3 px-0 block" href="#">About Us</a></li>
+                <li><a class="md:p-4 py-3 px-0 block" href="#">Contact Us</a></li>
 
-        <label for="menu-toggle" class="pointer-cursor md:hidden block">
-            <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                viewBox="0 0 20 20">
-                <title>menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-        </label>
-        <input class="hidden" type="checkbox" id="menu-toggle" />
+               
 
-        <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
-            <nav>
-                <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                    <li><a class="md:p-4 py-3 px-0 block" href="#">Product</a></li>
-                    <li><a class="md:p-4 py-3 px-0 block" href="#">About Us</a></li>
-                    <li><a class="md:p-4 py-3 px-0 block" href="#">Contact Us</a></li>
-                    <li><a class="md:p-4 py-3 px-0 block md:mb-0 mb-2" href="#">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-</body>
-
-</html>
+            </ul>
+        </nav>
+    </div>
+</header>
