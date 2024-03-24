@@ -1,18 +1,7 @@
-html {
-    font-size: 14px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
+.font-dosis {
+    font-family: 'Dosis', sans-serif;
 }

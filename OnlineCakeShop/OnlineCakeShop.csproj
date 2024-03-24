@@ -21,7 +21,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
   </ItemGroup>
+<ItemGroup>
+  <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
+  <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
+</ItemGroup>
 
+<Target Name="Tailwind" BeforeTargets="Build">
+  <Exec Command="npm run css:build"/>
+</Target>
   <ItemGroup>
     <ProjectReference Include="..\OnlineCakeShop.DataAccessLayer\OnlineCakeShop.DataAccessLayer.csproj" />
   </ItemGroup>
